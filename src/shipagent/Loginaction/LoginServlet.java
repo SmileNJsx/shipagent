@@ -3,7 +3,7 @@ package shipagent.Loginaction;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
-public class Login extends HttpServlet{
+public class LoginServlet extends HttpServlet{
 	
 	private String client_username = null;
 	private String client_password = null;
@@ -11,7 +11,7 @@ public class Login extends HttpServlet{
 	private String server_username = null;
 	private String server_password = null;
 	
-	Login(String client_username,String client_password,String server_username,String server_password){
+	LoginServlet(String client_username,String client_password,String server_username,String server_password){
 		this.client_username = client_username;
 		this.client_password = client_password;
 		
