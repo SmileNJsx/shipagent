@@ -16,6 +16,7 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req,HttpServletResponse resp){
 		System.out.println(req.getRequestURL());
+		System.out.println(req.getParameterValues("username"));//they have different encodings
 	}
 	
 	public boolean verification(){
