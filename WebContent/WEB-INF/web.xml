@@ -19,4 +19,14 @@
   	<servlet-name>Login</servlet-name>
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Addshipinfo</servlet-name>
+  	<servlet-class>shipagent.shipinfo.AddshipinfoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Addshipinfo</servlet-name>
+  	<url-pattern>/addshipinfo</url-pattern>
+  </servlet-mapping>
 </web-app>
