@@ -53,18 +53,18 @@
 							新增
 						</div>
 						<div class="modal-body" style="padding:40px 50px;">
-							<form role="form" id="add_col" action="/shipagent/addshipinfo" method="post">
+							<form role="form" id="add_col" naem="add_col" action="/shipagent/addshipinfo" method="post">
 								<div class="form-group">
 									<label for="EnglishshipName">英文船名</label>
-									<input type="text" class="form-control" id="EnglishshipName">
+									<input type="text" class="form-control" id="EnglishshipName" name="EnglishshipName">
 								</div>
 								<div class="form-group">
 									<label for="ChineseshipName">中文船名</label>
-									<input type="text" class="form-control" id="ChineseshipName">
+									<input type="text" class="form-control" id="ChineseshipName" name="ChineseshipName">
 								</div>
 								<div class="form-group">
-									<label for="number">呼号</label>
-									<input type="text" class="form-control" id="number">
+									<label for="Add_user">创建者</label>
+									<input type="text" class="form-control" id="Add_user" name="Add_user">
 								</div>
 
 							</form>

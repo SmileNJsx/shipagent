@@ -41,4 +41,14 @@ public class DbConnector {
 		
 		return result;
 	}
+	
+	public int insert(String sql) throws SQLException{
+		Statement statement = conn.createStatement();
+		
+		int num = statement.executeUpdate(sql);
+		
+		System.out.println(num+"rows have been influence");
+		
+		return num;
+	}
 }
