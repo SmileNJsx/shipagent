@@ -65,4 +65,12 @@ public class DbConnector {
 		
 		return num;
 	}
+	
+	public int delete(String sql) throws SQLException{
+		Statement statement = conn.createStatement();
+		
+		int num = statement.executeUpdate(sql);
+		
+		return num;
+	}
 }
