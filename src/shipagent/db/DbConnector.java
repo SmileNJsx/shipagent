@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class DbConnector {
 	private static String URL = "jdbc:mysql://127.0.0.1/shipagent";
@@ -40,6 +41,19 @@ public class DbConnector {
 		}
 		
 		return result;
+	}
+	
+	public ArrayList<String> selectlist(String sql,String key) throws SQLException{
+		 ArrayList<String> result = new ArrayList<>();
+		 
+		 Statement statement = conn.createStatement();
+		 
+		 ResultSet resultSet = statement.executeQuery(sql);
+		 
+		 while(resultSet.next()){
+			 result.add(resultSet.getString(key));
+		 }
+		 return result;
 	}
 	
 	public int insert(String sql) throws SQLException{
