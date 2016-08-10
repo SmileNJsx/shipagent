@@ -31,6 +31,16 @@
   </servlet-mapping>
   
   <servlet>
+  	<servlet-name>Deleteshipinfo</servlet-name>
+  	<servlet-class>shipagent.shipinfo.DeleteshipinfoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Deleteshipinfo</servlet-name>
+  	<url-pattern>/deleteshipinfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   <servlet-name>DataJson</servlet-name>
   <servlet-class>shipagent.data.DataJson</servlet-class>
   </servlet>
