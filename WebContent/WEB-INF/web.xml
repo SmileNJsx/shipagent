@@ -29,4 +29,15 @@
   	<servlet-name>Addshipinfo</servlet-name>
   	<url-pattern>/addshipinfo</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>DataJson</servlet-name>
+  <servlet-class>shipagent.data.DataJson</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>DataJson</servlet-name>
+  <url-pattern>/formdata</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
