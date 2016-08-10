@@ -98,7 +98,7 @@
 			
 			oTableInit.Init=function(){
 				$('#tb_departments').bootstrapTable({
-					url:'/formdata',
+					url:'/shipagent/formdata',
 					method:'get',
 					toolbar:'#toolbar',
 					striped:true,
@@ -107,7 +107,7 @@
 					sortable:false,
 					sortOrder:"asc",
 					queryParams:oTableInit.queryParams,
-					sidePagination:"server",
+					sidePagination:"client",
 					pageNumber:1,
 					pageSize:10,
 					pageList:[10,25,50,100],
@@ -131,28 +131,9 @@
 						field: 'ChineseshipName',
 						title: '中文船名'
 					}, {
-						field: 'OwnerEnglishName',
-						title: '所有人英文姓名'
-					}, {
-						field: 'OwnerChineseName',
-						title: '所有人中文姓名'
-					}, {
-						field: 'Country',
-						title: '国籍'
-					}, {
 						field: 'MakeName',
 						title: '创建者'
-					},	{ 
-					}, {
-						field: 'MakeTime',
-						title: '创建时间'
-					}, {
-						field: 'ModifyName',
-						title: '修改者'
-					}, {
-						field: 'ModifyTime',
-						title: '修改时间'
-					},]
+					}],
 				});
 			};
 			oTableInit.queryParams=function(params){
