@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,14 +19,14 @@ public class LoginServlet extends HttpServlet{
 	private String server_password = null;
 	
 	@Override
-	protected void doPost(HttpServletRequest req,HttpServletResponse resp) throws UnsupportedEncodingException, IOException, ServletException{
+	protected void doPost(HttpServletRequest req,HttpServletResponse resp) throws UnsupportedEncodingException, IOException{
 		
 		client_username = new String(req.getParameter("username").getBytes("iso-8859-1"),"utf-8");
 		client_password = new String(req.getParameter("password").getBytes("iso-8859-1"),"utf-8");
 		
 		try {
 			if(verification()){
-				req.getRequestDispatcher("/WEB-INF/shipinfoform/shipinfo.html").forward(req,resp);
+				resp.sendRedirect("/shipagent/shipinfoform/shipinfo.html");
 			}
 			else{
 				resp.sendRedirect("/shipagent/index.html");
