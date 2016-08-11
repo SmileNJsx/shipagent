@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import shipagent.db.DbConnector;
 
 @SuppressWarnings("serial")
@@ -16,6 +15,7 @@ public class AddshipinfoServlet extends HttpServlet{
 	private String Add_user = null;
 	@Override
 	protected void doPost(HttpServletRequest req,HttpServletResponse resp) throws IOException{
+		
 		EnglishshipName = new String(req.getParameter("EnglishshipName").getBytes("iso-8859-1"),"utf-8");
 		ChineseshipName = new String(req.getParameter("ChineseshipName").getBytes("iso-8859-1"),"utf-8");
 		Add_user = new String(req.getParameter("Add_user").getBytes("iso-8859-1"),"utf-8");
@@ -23,7 +23,7 @@ public class AddshipinfoServlet extends HttpServlet{
 		try {
 			if(insert()){
 				//resp.getWriter().println("success!");
-				resp.sendRedirect("/shipagent/shipinfoform/shipinfo.html");
+				resp.sendRedirect("/shipagent/form/shipinfoform/shipinfo.html");
 			}
 			else{
 				//resp.getWriter().println("error!");

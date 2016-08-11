@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import shipagent.db.DbConnector;
 
@@ -21,11 +22,14 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req,HttpServletResponse resp) throws UnsupportedEncodingException, IOException{
 		
+		HttpSession session = req.getSession();
+		
 		client_username = new String(req.getParameter("username").getBytes("iso-8859-1"),"utf-8");
 		client_password = new String(req.getParameter("password").getBytes("iso-8859-1"),"utf-8");
 		
 		try {
 			if(verification()){
+				session.setAttribute("username", client_username);
 				resp.sendRedirect("/shipagent/shipinfoform/shipinfo.html");
 			}
 			else{

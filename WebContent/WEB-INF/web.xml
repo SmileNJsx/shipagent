@@ -10,6 +10,28 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  
+  <session-config>
+  	<session-timeout>3</session-timeout>
+  	<cookie-config>
+  		<http-only>true</http-only>
+  	</cookie-config>
+  	<tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+  
+  <filter>
+  	<filter-name>AllFilter</filter-name>
+  	<filter-class>shipagent.filter.AuthenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>AllFilter</filter-name>
+  	<url-pattern>/form/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>AllFilter</filter-name>
+  	<url-pattern>/shipinfoform/*</url-pattern>
+  </filter-mapping>
+  
   <servlet>
   	<servlet-name>Login</servlet-name>
   	<servlet-class>shipagent.Loginaction.LoginServlet</servlet-class>
@@ -27,7 +49,7 @@
   
   <servlet-mapping>
   	<servlet-name>Addshipinfo</servlet-name>
-  	<url-pattern>/addshipinfo</url-pattern>
+  	<url-pattern>/form/addshipinfo</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -37,7 +59,7 @@
   
   <servlet-mapping>
   	<servlet-name>Deleteshipinfo</servlet-name>
-  	<url-pattern>/deleteshipinfo</url-pattern>
+  	<url-pattern>/form/deleteshipinfo</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -47,7 +69,7 @@
   
   <servlet-mapping>
   <servlet-name>DataJson</servlet-name>
-  <url-pattern>/formdata</url-pattern>
+  <url-pattern>/form/formdata</url-pattern>
   </servlet-mapping>
   
 </web-app>
