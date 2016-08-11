@@ -53,7 +53,7 @@
 							新增
 						</div>
 						<div class="modal-body" style="padding:40px 50px;">
-							<form role="form" id="add_col" naem="add_col" action="/shipagent/addshipinfo" method="post">
+							<form role="form" id="add_col" naem="add_col" action="/shipagent/form/addshipinfo" method="post">
 								<div class="form-group">
 									<label for="EnglishshipName">英文船名</label>
 									<input type="text" class="form-control" id="EnglishshipName" name="EnglishshipName">
@@ -85,7 +85,7 @@
 							修改
 						</div>
 						<div class="modal-body" style="padding:40px 50px;">
-							<form role="form" id="add_col" naem="add_col" action="/shipagent/editshipinfo" method="post">
+							<form role="form" id="add_col" naem="add_col" action="/shipagent/form/editshipinfo" method="post">
 								<div class="form-group">
 									<label for="EnglishshipName">英文船名</label>
 									<input type="text" class="form-control" id="EnglishshipName" name="EnglishshipName" value="a">
@@ -136,7 +136,7 @@
 			
 			oTableInit.Init=function(){
 				$('#tb_departments').bootstrapTable({
-					url:'/shipagent/formdata',
+					url:'/shipagent/form/formdata',
 					method:'get',
 					toolbar:'#toolbar',
 					striped:true,
