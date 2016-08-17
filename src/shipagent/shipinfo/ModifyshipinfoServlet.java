@@ -10,14 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import shipagent.db.DbConnector;
 
 @SuppressWarnings("serial")
-public class DeleteshipinfoServlet extends HttpServlet{
+public class ModifyshipinfoServlet extends HttpServlet{
 	private String EnglishshipName = null;
+	private String ChineseshipName = null;
+	private String Add_user = null;
 	
 	protected void doPost(HttpServletRequest req,HttpServletResponse resp) throws IOException{
 		EnglishshipName = new String(req.getParameter("EnglishshipName").getBytes("iso-8859-1"),"utf-8");
+		ChineseshipName = new String(req.getParameter("ChineseshipName").getBytes("iso-8859-1"),"utf-8");
+		Add_user = new String(req.getParameter("Add_user").getBytes("iso-8859-1"),"utf-8");
 		
 		try {
-			if(delete()){
+			if(update()){
 				//resp.getWriter().println("success!");
 				resp.sendRedirect("/shipagent/shipinfoform/shipinfo.html");
 			}
@@ -31,11 +35,11 @@ public class DeleteshipinfoServlet extends HttpServlet{
 		}
 	}
 	
-	public boolean delete() throws SQLException{
-		String sql ="delete from t_ship_info where EnglishName="+"'"+EnglishshipName+"'";
+	public boolean update() throws SQLException{
+		String sql = "update t_ship_info set ChineseName="+"'"+ChineseshipName+"'"+", set Add_user="+"'"+Add_user+"'"+"where EnglishName="+"'"+EnglishshipName+"'";
 		
 		DbConnector conn = new DbConnector();
-		int num = conn.delete(sql);
+		int num = conn.update(sql);
 		
 		if(num>=1){
 			return true;
@@ -44,4 +48,5 @@ public class DeleteshipinfoServlet extends HttpServlet{
 			return false;
 		}
 	}
+	
 }

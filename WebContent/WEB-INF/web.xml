@@ -9,8 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  
   <session-config>
   	<session-timeout>3</session-timeout>
   	<cookie-config>
@@ -18,7 +16,6 @@
   	</cookie-config>
   	<tracking-mode>COOKIE</tracking-mode>
   </session-config>
-  
   <filter>
   	<filter-name>AllFilter</filter-name>
   	<filter-class>shipagent.filter.AuthenticationFilter</filter-class>
@@ -53,23 +50,30 @@
   </servlet-mapping>
   
   <servlet>
+  	<servlet-name>DataJson</servlet-name>
+  	<servlet-class>shipagent.data.DataJson</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DataJson</servlet-name>
+  	<url-pattern>/form/formdata</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   	<servlet-name>Deleteshipinfo</servlet-name>
   	<servlet-class>shipagent.shipinfo.DeleteshipinfoServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
   	<servlet-name>Deleteshipinfo</servlet-name>
   	<url-pattern>/form/deleteshipinfo</url-pattern>
   </servlet-mapping>
-  
+ 
   <servlet>
-  <servlet-name>DataJson</servlet-name>
-  <servlet-class>shipagent.data.DataJson</servlet-class>
+  	<servlet-name>Modifyshipinfo</servlet-name>
+  	<servlet-class>shipagent.shipinfo.ModifyshipinfoServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>DataJson</servlet-name>
-  <url-pattern>/form/formdata</url-pattern>
+  	<servlet-name>Modifyshipinfo</servlet-name>
+  	<servlet-pattern>/form/editshipinfo</servlet-pattern>
   </servlet-mapping>
-  
 </web-app>
