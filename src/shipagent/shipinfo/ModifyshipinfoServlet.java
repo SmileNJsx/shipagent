@@ -36,7 +36,7 @@ public class ModifyshipinfoServlet extends HttpServlet{
 	}
 	
 	public boolean update() throws SQLException{
-		String sql = "update t_ship_info set ChineseName="+"'"+ChineseshipName+"'"+", set Add_user="+"'"+Add_user+"'"+"where EnglishName="+"'"+EnglishshipName+"'";
+		String sql = "update t_ship_info set ChineseName="+"'"+ChineseshipName+"'"+",Add_user="+"'"+Add_user+"'"+"where EnglishName="+"'"+EnglishshipName+"'";
 		
 		DbConnector conn = new DbConnector();
 		int num = conn.update(sql);

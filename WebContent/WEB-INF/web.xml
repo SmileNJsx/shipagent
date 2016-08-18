@@ -74,6 +74,6 @@
   
   <servlet-mapping>
   	<servlet-name>Modifyshipinfo</servlet-name>
-  	<servlet-pattern>/form/editshipinfo</servlet-pattern>
+  	<url-pattern>/form/editshipinfo</url-pattern>
   </servlet-mapping>
 </web-app>
