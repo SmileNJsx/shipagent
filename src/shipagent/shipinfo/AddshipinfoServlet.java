@@ -23,7 +23,7 @@ public class AddshipinfoServlet extends HttpServlet{
 		try {
 			if(insert()){
 				//resp.getWriter().println("success!");
-				resp.sendRedirect("/shipagent/form/shipinfoform/shipinfo.html");
+				resp.sendRedirect("/shipagent/shipinfoform/shipinfo.html");
 			}
 			else{
 				//resp.getWriter().println("error!");

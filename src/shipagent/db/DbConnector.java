@@ -73,4 +73,12 @@ public class DbConnector {
 		
 		return num;
 	}
+	
+	public int update(String sql) throws SQLException{
+		Statement statement = conn.createStatement();
+		
+		int num =statement.executeUpdate(sql);
+		
+		return num;
+	}
 }
