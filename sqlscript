@@ -1,0 +1,77 @@
+-- --------------------------------------------------------
+-- 主机:                           127.0.0.1
+-- 服务器版本:                        5.7.10-log - MySQL Community Server (GPL)
+-- 服务器操作系统:                      Win64
+-- HeidiSQL 版本:                  9.3.0.4984
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- 导出 shipagent 的数据库结构
+CREATE DATABASE IF NOT EXISTS `shipagent` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `shipagent`;
+
+
+-- 导出  表 shipagent.t_ship_info 结构
+CREATE TABLE IF NOT EXISTS `t_ship_info` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `Add_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
+  `Modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `EnglishName` varchar(25) NOT NULL COMMENT '英文船名',
+  `ChineseName` text NOT NULL COMMENT '中文船名',
+  `OwnerEnglishName` text COMMENT '所有者英文船名',
+  `OwnerChineseName` text COMMENT '所有者中文船名',
+  `OperatorName` text COMMENT '国籍',
+  `Add_user` text NOT NULL COMMENT '创建者',
+  `Modify_user` text COMMENT '修改者',
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `EnglishName` (`EnglishName`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+
+-- 正在导出表  shipagent.t_ship_info 的数据：~18 rows (大约)
+/*!40000 ALTER TABLE `t_ship_info` DISABLE KEYS */;
+REPLACE INTO `t_ship_info` (`Id`, `Add_time`, `Modify_time`, `EnglishName`, `ChineseName`, `OwnerEnglishName`, `OwnerChineseName`, `OperatorName`, `Add_user`, `Modify_user`) VALUES
+	(3, '2016-08-10 09:09:14', '2016-08-17 21:49:25', 'whj', 'shixiao', NULL, NULL, NULL, 'shixiao', NULL),
+	(4, '2016-08-10 11:41:15', '2016-08-10 11:41:15', 'xiao', 'xiao', NULL, NULL, NULL, 'xiao', NULL),
+	(5, '2016-08-10 11:43:41', '2016-08-10 11:43:41', 'wang', 'wang', NULL, NULL, NULL, 'wang', NULL),
+	(6, '2016-08-10 16:35:33', '2016-08-10 16:35:33', 'qiu', 'qiu', NULL, NULL, NULL, 'qiu', NULL),
+	(7, '2016-08-10 16:36:03', '2016-08-10 16:36:03', 'a', 'a', NULL, NULL, NULL, 'a', NULL),
+	(8, '2016-08-10 16:36:10', '2016-08-10 16:36:10', 'b', 'b', NULL, NULL, NULL, 'b', NULL),
+	(9, '2016-08-10 16:36:18', '2016-08-10 16:36:18', 'c', 'c', NULL, NULL, NULL, 'c', NULL),
+	(10, '2016-08-10 16:36:23', '2016-08-10 16:36:23', 'd', 'd', NULL, NULL, NULL, 'd', NULL),
+	(11, '2016-08-10 16:36:36', '2016-08-10 16:36:36', 'e', 'e', NULL, NULL, NULL, 'e', NULL),
+	(14, '2016-08-10 16:41:41', '2016-08-10 16:41:41', 'q', '中', NULL, NULL, NULL, '中', NULL),
+	(15, '2016-08-10 19:27:21', '2016-08-10 19:27:21', 'anguangwen', '安广文', NULL, NULL, NULL, '安广文', NULL),
+	(16, '2016-08-10 21:14:27', '2016-08-10 21:14:27', 'shi2', 'shi2', NULL, NULL, NULL, 'shi2', NULL),
+	(17, '2016-08-10 21:17:19', '2016-08-10 21:17:19', 'whj2', 'whj2', NULL, NULL, NULL, 'whj2', NULL),
+	(18, '2016-08-11 14:41:29', '2016-08-11 14:41:29', 'shi3', 'shi3', NULL, NULL, NULL, 'shi3', NULL),
+	(19, '2016-08-11 15:01:59', '2016-08-11 15:01:59', '111', '1111', NULL, NULL, NULL, '111111', NULL),
+	(20, '2016-08-17 20:39:19', '2016-08-17 20:39:19', 'aaaaaaaaaa', 'aaaaaaaaaaa', NULL, NULL, NULL, 'aaaaaaaaaaaa', NULL),
+	(21, '2016-08-17 20:40:20', '2016-08-17 20:40:20', 'ad', 'ad', NULL, NULL, NULL, 'ad', NULL),
+	(22, '2016-08-17 21:32:59', '2016-08-17 21:32:59', 'ads', 'ads', NULL, NULL, NULL, 'ads', NULL);
+/*!40000 ALTER TABLE `t_ship_info` ENABLE KEYS */;
+
+
+-- 导出  表 shipagent.t_users 结构
+CREATE TABLE IF NOT EXISTS `t_users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户记录',
+  `username` varchar(24) NOT NULL COMMENT '用户名',
+  `password` varchar(24) NOT NULL COMMENT '密码',
+  `add_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
+  `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique` (`username`),
+  KEY `add_time` (`add_time`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- 正在导出表  shipagent.t_users 的数据：~0 rows (大约)
+/*!40000 ALTER TABLE `t_users` DISABLE KEYS */;
+REPLACE INTO `t_users` (`id`, `username`, `password`, `add_time`, `modify_time`) VALUES
+	(1, 'root', 'root', '2016-07-04 20:07:52', '2016-07-04 20:07:53');
+/*!40000 ALTER TABLE `t_users` ENABLE KEYS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
